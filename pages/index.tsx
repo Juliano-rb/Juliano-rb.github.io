@@ -1,30 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import SEOTags from '../src/components/SEOTags'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const meta = {
-    title: 'Página de @jul1anoro',
-    description: 'Portifólio e Blog pessoal de Juliano R. Barbosa.',
-    image: 'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png',
-  }
-  
   return (
     <div className={styles.container}>
       <Head>
-        <title>{meta.title}</title>
+        <title>Página de @jul1anoro</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="robots" content="follow, index" />
-        <meta name="description" content={meta.description} />
-        <meta property="og:site_name" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@yourname" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
+        <SEOTags title="Página de @jul1anoro"
+                 description="Portifólio e Blog pessoal de Juliano R. Barbosa."
+                 image="https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png"/>
       </Head>
 
       <main className={styles.main}>

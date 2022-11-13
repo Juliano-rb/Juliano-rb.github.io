@@ -4,12 +4,16 @@ import Link from "next/link"
 import { getAllArticles } from '../../src/utils/mdx'
 import dayjs from 'dayjs'
 import { uniqueId } from 'lodash'
+import SEOTags from '../../src/components/SEOTags'
 
 export default function BlogPage({ posts }: any) {// TODO: Criar tipos
   return (
     <React.Fragment>
       <Head>
-        <title>My Blog</title>
+        <title>Blog de Juliano R. Barbosa</title>
+        <SEOTags title="Blog de Juliano R. Barbosa."
+                 description="Blog de Juliano R. Barbosa."
+                 image="https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png"/>
       </Head>
       <div>
         {posts.map((frontMatter: any) => {
