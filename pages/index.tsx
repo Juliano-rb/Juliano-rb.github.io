@@ -3,15 +3,15 @@ import Image from 'next/image'
 import SEOTags from '../src/components/SEOTags'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home () {
   return (
     <div className={styles.container}>
       <Head>
         <title>Página de @jul1anoro</title>
         <link rel="icon" href="/favicon.ico" />
         <SEOTags title="Página de @jul1anoro"
-                 description="Portifólio e Blog pessoal de Juliano R. Barbosa."
-                 image="https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png"/>
+          description="Portifólio e Blog pessoal de Juliano R. Barbosa."
+          image="https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png"/>
       </Head>
 
       <main className={styles.main}>

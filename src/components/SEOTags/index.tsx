@@ -4,7 +4,7 @@ type SEOTagsProps = {
   image: string;
 };
 
-export default function SEOTags({ title, description, image }: SEOTagsProps) {
+export default function SEOTags ({ title, description, image }: SEOTagsProps) {
   return (
     <>
       <meta name="robots" content="follow, index" />
@@ -19,5 +19,5 @@ export default function SEOTags({ title, description, image }: SEOTagsProps) {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
     </>
-  );
+  )
 }

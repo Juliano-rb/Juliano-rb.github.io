@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     loader: 'akamai',
     path: ''
+  },
+  eslint: {
+    dirs: ['pages', 'src']
   }
 }
 
