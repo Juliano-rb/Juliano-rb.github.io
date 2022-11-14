@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
+    "cz": "cz",
     "postinstall": "husky install",
     "lint-staged": "lint-staged"
   },
@@ -32,6 +33,8 @@
     "@types/node": "18.11.7",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
     "eslint-config-prettier": "^8.5.0",
@@ -42,5 +45,10 @@
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "typescript": "4.8.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
