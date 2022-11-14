@@ -6,7 +6,7 @@ import { sync } from "glob";
 import { Article } from "../types/Article";
 import { Post, PostMetadata } from "../types/Post";
 
-const articlesPath = path.posix.join("data/blog-posts");
+const articlesPath = path.posix.join("posts/articles");
 
 export async function getSlug() {
   const paths = sync(`${articlesPath}/*.mdx`, {});
