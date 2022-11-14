@@ -3,6 +3,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 import { sync } from "glob";
+import { Article } from "../types/Article";
+import { Post, PostMetadata } from "../types/Post";
 
 const articlesPath = path.posix.join("data/blog-posts");
 
@@ -19,7 +21,7 @@ export async function getSlug() {
   });
 }
 
-export async function getArticleFromSlug(slug: string) {
+export async function getArticleFromSlug(slug: string): Promise<Article> {
   const articleDir = path.join(articlesPath, `${slug}.mdx`);
   const source = fs.readFileSync(articleDir);
   const { content, data } = matter(source);
@@ -31,30 +33,26 @@ export async function getArticleFromSlug(slug: string) {
       excerpt: data.excerpt,
       title: data.title,
       publishedAt: data.publishedAt,
-      readingTime: readingTime(source.toString()).text, // TODO: verificar se o toString é melhor do que usar content, suspeito q n
+      readingTime: readingTime(source.toString()).text,
       ...data,
     },
   };
 }
 
-export async function getAllArticles() {
+export async function getAllArticles(): Promise<Post[]> {
   const articles = fs.readdirSync(path.join(process.cwd(), articlesPath));
 
-  return articles.reduce((allArticles: any, articleSlug: string) => { // TODO: tipar allArticles corretamente
-    // get parsed data from mdx files in the "articles" dir
+  return articles.map(articleSlug => {
     const source = fs.readFileSync(
       path.join(process.cwd(), articlesPath, articleSlug),
       "utf-8"
     );
-    const { data } = matter(source);
+    const metadata = matter(source).data as PostMetadata;
 
-    return [
-      {
-        ...data,
-        slug: articleSlug.replace(".mdx", ""),
-        readingTime: readingTime(source).text,
-      },
-      ...allArticles,
-    ];
-  }, []);
+    return {
+      ...metadata,
+      slug: articleSlug.replace(".mdx", ""),
+      readingTime: readingTime(source).text,
+    }
+  })
 }
