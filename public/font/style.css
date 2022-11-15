@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Bookerly";
+  src: url("./Bookerly.eot");
+  src: url("./Bookerly.eot?#iefix")
+      format("embedded-opentype"),
+    url("./Bookerly.woff2")
+      format("woff2"),
+    url("./Bookerly.woff")
+      format("woff"),
+    url("./Bookerly.ttf")
+      format("truetype"),
+    url("./Bookerly.svg#Bookerly")
+      format("svg");
+}
