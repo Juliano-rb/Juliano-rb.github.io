@@ -7,7 +7,6 @@ type SEOTagsProps = {
 export default function SEOTags ({ title, description, image }: SEOTagsProps) {
   return (
     <>
-      <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
       <meta property="og:site_name" content={title} />
       <meta property="og:description" content={description} />
