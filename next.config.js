@@ -8,6 +8,10 @@ const nextConfig = {
   },
   eslint: {
     dirs: ['pages', 'src']
+  },
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
   }
 }
 
