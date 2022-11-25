@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Header from '../src/components/Header'
 import SEOTags from '../src/components/SEOTags'
 
 export default function Home () {
   return (
-    <div >
+    <>
       <Head>
         <title>Página de @jul1anoro</title>
         <link rel="icon" href="/favicon.ico" />
@@ -13,11 +13,13 @@ export default function Home () {
           image="https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png"/>
       </Head>
 
+      <Header />
+
       <main>
 
       </main>
 
-      <footer >
+      {/* <footer >
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -28,7 +30,7 @@ export default function Home () {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
-    </div>
+      </footer> */}
+    </>
   )
 }
