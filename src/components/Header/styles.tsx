@@ -8,10 +8,6 @@ export const Header = styled.header`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-
-  @media only screen and (max-width: 320px) {
-    margin: 5px;
-  }
 `
 
 export const ImagePane = styled.div`
@@ -24,14 +20,13 @@ export const ImagePane = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 
   img{
     width: 90%;
     height: auto;
     border-radius: 100%;
     object-fit:cover;
-    margin: 5px;
   }
 `
 
