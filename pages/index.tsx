@@ -1,9 +1,17 @@
 import Head from 'next/head'
 import Footer from '../src/components/Footer'
 import Header from '../src/components/Header'
+import PostsExplorer from '../src/components/PostsExplorer'
 import SEOTags from '../src/components/SEOTags'
+import { Post } from '../src/types/Post'
+import { getAllArticles } from '../src/utils/mdx'
+import { Section } from '../styles/pages.styles'
 
-export default function Home () {
+type Props ={
+  posts: Post[];
+}
+
+export default function Home ({ posts }: Props) {
   return (
     <>
       <Head>
@@ -17,10 +25,32 @@ export default function Home () {
       <Header />
 
       <main>
-
+        <Section id='blog'>
+          <h2>Blog</h2>
+          <PostsExplorer posts={posts}/>
+        </Section>
       </main>
 
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps () {
+  const articles = await getAllArticles()
+
+  articles
+    .map((article) => article)
+    .sort((a, b) => {
+      if (a.publishedAt > b.publishedAt) return 1
+      if (a.publishedAt < b.publishedAt) return -1
+
+      return 0
+    })
+
+  return {
+    props: {
+      posts: articles.reverse()
+    }
+  }
 }
