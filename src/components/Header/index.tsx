@@ -18,7 +18,7 @@ export default function Header () {
             </div>
             <S.Nav>
                 <ul>
-                    <li className='home'><Link href="/">Início</Link></li>
+                    <li className='home'><Link href="/" prefetch={false}>Início</Link></li>
                     <li><a href="https://github.com/Juliano-rb">github</a></li>
                     <li><a href="https://www.linkedin.com/in/juliano-barbosa-459a75159">linkedin</a></li>
                     <li><a href="https://twitter.com/jul1anoro">twitter</a></li>

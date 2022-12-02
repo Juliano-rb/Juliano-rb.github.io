@@ -2,10 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // images: {
-  //   loader: 'akamai',
-  //   path: ''
-  // },
+  images: {
+    unoptimized: true
+  },
   eslint: {
     dirs: ['pages', 'src']
   },
@@ -15,4 +14,13 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
+
+module.exports = withBundleAnalyzer({
+  ...nextConfig
+  // env: {
+  //   NEXT_PUBLIC_ENV: 'PRODUCTION'
+  // }
+})

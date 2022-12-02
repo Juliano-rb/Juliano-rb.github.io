@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { getAllArticles } from '../../src/utils/mdx'
 import dayjs from 'dayjs'
-import { uniqueId } from 'lodash'
+import uniqueId from 'lodash/uniqueId'
 import SEOTags from '../../src/components/SEOTags'
 
 export default function BlogPage ({ posts }: any) { // TODO: Criar tipos
@@ -18,7 +18,7 @@ export default function BlogPage ({ posts }: any) { // TODO: Criar tipos
       <div>
         {posts.map((frontMatter: any) => {
           return (
-            <Link key={uniqueId()} href={`/blog/${frontMatter.slug}`} passHref>
+            <Link key={uniqueId()} href={`/blog/${frontMatter.slug}`} prefetch={false} passHref>
               <div>
                 <h1 className="title">{frontMatter.title}</h1>
                 <p className="summary">{frontMatter.excerpt}</p>

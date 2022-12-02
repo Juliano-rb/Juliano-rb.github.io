@@ -10,11 +10,14 @@
     "export": "next export",
     "cz": "cz",
     "postinstall": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@types/glob": "^8.0.0",
-    "@types/lodash": "^4.14.186",
+    "@types/lodash": "^4.14.191",
     "dayjs": "^1.11.6",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
@@ -31,11 +34,13 @@
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.0.6",
     "@types/node": "18.11.7",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "@types/styled-components": "^5.1.26",
     "commitizen": "^4.2.5",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
