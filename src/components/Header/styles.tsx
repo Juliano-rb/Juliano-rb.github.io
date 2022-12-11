@@ -35,6 +35,8 @@ export const DetailsPane = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  height: 100px;
+
   h1 {
     font-size: 1.45rem;
     margin-bottom: 5px;
