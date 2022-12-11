@@ -5,4 +5,5 @@ export const PostExplorer = styled.div`
     flex-wrap: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
+    column-gap: 8px;
 `
