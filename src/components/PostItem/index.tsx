@@ -1,4 +1,5 @@
 import { Post } from '../../types/Post'
+import Image from 'next/image'
 import * as S from './styles'
 
 type Props ={
@@ -7,7 +8,11 @@ type Props ={
 
 export default function PostItem ({ post }: Props) {
   return (<S.PostItem>
-    <div></div>
+    <S.PostCover>
+      <Image width={120} height={120}
+             src={post.cover_image}
+             alt="Capa do artigo" />
+    </S.PostCover>
     <div>
       <h3>{post.title}</h3>
       <p>

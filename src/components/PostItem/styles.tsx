@@ -7,13 +7,7 @@ export const PostItem = styled.div`
 
     display: flex;
     column-gap: 8px;
-
-    div:nth-child(1){
-        flex: 1 0 0;
-        width: 120px;
-        height: 120px;
-        background-color: grey;
-    }
+        
     div:nth-child(2){
         flex: 1 1 0;
     }
@@ -25,5 +19,19 @@ export const PostItem = styled.div`
 
     p{
         
+    }
+`
+
+export const PostCover = styled.div`
+    color: white;
+    width: 120px;
+    height: 120px;
+    background-color: grey;
+
+    img{
+        flex: 1 0 0;
+        width: 120px;
+        height: 120px;
+        object-fit:cover;
     }
 `
